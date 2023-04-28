@@ -79,16 +79,41 @@ _G.packer_plugins = {
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   embark = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme embark\bcmd\bvim\0" },
     loaded = true,
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/embark",
     url = "https://github.com/embark-theme/vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   harpoon = {
     loaded = true,
@@ -120,10 +145,20 @@ _G.packer_plugins = {
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -145,11 +180,6 @@ _G.packer_plugins = {
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["typescript-vim"] = {
-    loaded = true,
-    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/typescript-vim",
-    url = "https://github.com/leafgarland/typescript-vim"
-  },
   undotree = {
     loaded = true,
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/undotree",
@@ -160,15 +190,10 @@ _G.packer_plugins = {
     path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-javascript"] = {
+  ["vim-jsx"] = {
     loaded = true,
-    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/vim-javascript",
-    url = "https://github.com/pangloss/vim-javascript"
-  },
-  ["vim-jsx-pretty"] = {
-    loaded = true,
-    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
-    url = "https://github.com/maxmellon/vim-jsx-pretty"
+    path = "/Users/rafli/.local/share/nvim/site/pack/packer/start/vim-jsx",
+    url = "https://github.com/mxw/vim-jsx"
   }
 }
 
