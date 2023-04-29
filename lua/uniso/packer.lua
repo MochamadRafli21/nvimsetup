@@ -52,4 +52,9 @@ return require('packer').startup(function(use)
 	  }
   }
   use('mxw/vim-jsx')
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  use('windwp/nvim-ts-autotag')
 end)
