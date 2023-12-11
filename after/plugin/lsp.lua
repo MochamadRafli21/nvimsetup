@@ -2,14 +2,37 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'ts-ls',
-  'rust_analyzer',
+-- Fix Undefined global 'vim'
+lsp.configure('gopls', {
+    settings = {
+        gopls = {
+            gofumpt = true
+        }
+    }
 })
 
--- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp.configure('pylsp', {
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    ignore = {'W391'},
+                    maxLineLength = 100
+                }
+            }
+        }
+    }
+})
+
+lsp.configure('jsonls', {
+    settings = {
+        json = {
+            validate = { enable = true },
+        }
+    }
+})
+
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -19,6 +42,33 @@ lsp.configure('lua-language-server', {
     }
 })
 
+lsp.configure('rust_analyzer', {
+    settings = {
+        ["rust-analyzer"] = {
+            diagnostics = {
+                enable = true
+            }
+        }
+    }
+})
+
+lsp.configure('pyright', {
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = 'basic'
+            }
+        }
+    }
+})
+
+lsp.configure('tsserver',{
+    settings = {
+        completions = {
+            completeFunctionCalls = true
+        }
+    }
+})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -31,6 +81,22 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
+
+
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
+
+lsp.ensure_installed({
+  'tsserver',
+  'eslint',
+  'lua_ls',
+  'rust_analyzer',
+  'pyright',
+  'pylsp',
+  'gopls',
+  'golangci_lint_ls',
+  'jsonls',
+})
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
@@ -59,8 +125,13 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
 end)
 
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+  lsp.buffer_autoformat()
+end)
 lsp.setup()
 
 vim.diagnostic.config({
