@@ -70,6 +70,14 @@ lsp.configure('tsserver', {
   }
 })
 
+lsp.configure('elixirls', {
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false
+    }
+  }
+})
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -96,6 +104,7 @@ lsp.ensure_installed({
   'gopls',
   'golangci_lint_ls',
   'jsonls',
+  'elixirls'
 })
 
 lsp.setup_nvim_cmp({
