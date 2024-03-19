@@ -97,6 +97,7 @@ cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = 
 lsp.ensure_installed({
   'tsserver',
   'eslint',
+  'phpactor',
   'lua_ls',
   'rust_analyzer',
   'pyright',
