@@ -23,13 +23,7 @@ return require('packer').startup(function(use)
     end
   }
 
-  use {
-    'embark-theme/vim',
-    as = 'embark',
-    config = function()
-      vim.cmd('colorscheme embark')
-    end
-  }
+  use("EdenEast/nightfox.nvim")
   use("nvim-tree/nvim-tree.lua")
   use("nvim-tree/nvim-web-devicons")
 
