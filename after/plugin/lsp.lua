@@ -2,7 +2,14 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
--- Fix Undefined global 'vim'
+lsp.configure('phpactor', {
+  settings = {
+    phpactor = {
+      useFormatting = true
+    }
+  }
+})
+
 lsp.configure('gopls', {
   settings = {
     gopls = {
@@ -70,13 +77,6 @@ lsp.configure('tsserver', {
   }
 })
 
-lsp.configure('elixirls', {
-  settings = {
-    elixirLS = {
-      dialyzerEnabled = false
-    }
-  }
-})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
